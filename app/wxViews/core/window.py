@@ -33,7 +33,7 @@ class LowVoltageTool(wx.Frame):
         hbox.Add(self.details_panel, proportion=1, flag=wx.RIGHT|wx.EXPAND)
 
         self.mainpanel.SetSizer(hbox)
-        self.mainpanel.Bind(wx.EVT_RIGHT_UP, Engine.OnRightClick)
+        self.mainpanel.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
         self.SetMenuBar(self.menu)
 
     def OnExitApp(self, event):

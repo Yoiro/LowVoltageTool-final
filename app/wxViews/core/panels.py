@@ -27,7 +27,7 @@ class ToolBar(wx.Panel):
         layout.Add(self.eraser_btn, flag=wx.EXPAND)
 
         self.SetSizer(layout)
-        self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().Instance().OnRightClick)
+        self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
 
     def bindEvents(self):
         # Event binding
@@ -87,14 +87,14 @@ class PaintPanel(wx.Panel):
 
     def OnLeftClick(self, event):
         if Engine.Instance().toolbarClicked:
+            dc = wx.ClientDC(self.canvas)
             if Engine.Instance().item == "Node":
                 x, y = event.GetX(), event.GetY()
-                frontNode = NodeRepr(pos=(x,y), diameter=NodeDrawer.size)
-                print("drawing node of r %s in (%s,%s)" % (NodeDrawer.size, x, y))
-                self.canvas.AddObject(frontNode)
+                frontNode = NodeRepr()
+                frontNode.circle = FC.Circle(XY=(x, y), Diameter=NodeDrawer.size)
+                dc.DrawCircle(*frontNode.circle.__dict__.items())
                 Engine.Instance().releaseFocus()
                 Engine.Instance().AddNode(frontNode)
-                print("Node drown!")
 
 
 class DetailsPanel(wx.Panel):
@@ -113,51 +113,56 @@ class DetailsPanel(wx.Panel):
         # set layouts
         low_szr = wx.BoxSizer(orient=wx.HORIZONTAL)
         low_szr.Add(loadflow_btn, 1, flag=wx.EXPAND)
-        sizer.Add(notebook, proportion=4.5, flag=wx.TOP|wx.EXPAND)
+        sizer.Add(notebook.notebook, proportion=4.5, flag=wx.TOP|wx.EXPAND)
         sizer.Add(low_szr, proportion=0.5, flag=wx.BOTTOM)
         self.SetSizerAndFit(sizer)
 
         self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
 
 
-class TabbedGrid(wx.Notebook, Observer):
+class TabbedGrid(Observer):
     def __init__(self, parent):
-        super(TabbedGrid, self).__init__(parent, id=wx.ID_ANY)
+        super(TabbedGrid, self).__init__()
         # Get Top level network
         self.network = Engine.Instance().network
+        Engine.Instance().network.register(self)
+        self.notebook = wx.Notebook(parent, id=wx.ID_ANY)
         # Initialize Tabs
-        self.tab1 = wx.grid.Grid(self, id=wx.ID_ANY, name="IN")
-        self.tab1.CreateGrid(len(self.network.get_brackets()), 5)
+        self.tab1 = wx.grid.Grid(self.notebook, id=wx.ID_ANY, name="IN")
+        self.tab1.CreateGrid(len(self.network.items), 5)
         self.tab1.ShowScrollbars(wx.SHOW_SB_DEFAULT, wx.SHOW_SB_DEFAULT)
-        self.tab2 = wx.grid.Grid(self, id=wx.ID_ANY, name="OUT")
-        self.tab2.CreateGrid(len(self.network.get_brackets()), 5)
+        self.tab2 = wx.grid.Grid(self.notebook, id=wx.ID_ANY, name="OUT")
+        self.tab2.CreateGrid(len(self.network.items), 5)
         self.tab2.ShowScrollbars(wx.SHOW_SB_DEFAULT, wx.SHOW_SB_DEFAULT)
         # Add Tabs to the Tabbed Panel
-        self.AddPage(self.tab1, "IN")
-        self.AddPage(self.tab2, "OUT")
+        self.notebook.AddPage(self.tab1, "IN")
+        self.notebook.AddPage(self.tab2, "OUT")
         # Binding events
-        self.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnPageChanged)
-        self.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnPageChanging)
+        self.notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnPageChanged)
+        self.notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnPageChanging)
 
-        self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
+        self.notebook.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
         self.tab1.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
         self.tab2.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
 
     def OnPageChanged(self, event):
         old = event.GetOldSelection()
         new = event.GetSelection()
-        sel = self.GetSelection()
+        sel = self.notebook.GetSelection()
         event.Skip()
 
     def OnPageChanging(self, event):
         old = event.GetOldSelection()
         new = event.GetSelection()
-        sel = self.GetSelection()
+        sel = self.notebook.GetSelection()
         event.Skip()
 
     def update(self, *args, **kwargs):
         self.network = Engine.Instance().network
+        for item in self.network.items:
+            print(item)
+        print("Network updated!")
 
     def GetValue(self, row, col):
         return str(self.network.item[row][col])
-    
+
