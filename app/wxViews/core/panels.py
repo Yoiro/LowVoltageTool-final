@@ -165,4 +165,3 @@ class TabbedGrid(Observer):
 
     def GetValue(self, row, col):
         return str(self.network.item[row][col])
-

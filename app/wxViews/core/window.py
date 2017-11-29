@@ -6,11 +6,18 @@ from app.wxViews.core import Engine
 class LowVoltageTool(wx.Frame):
     """Main Window"""
     def __init__(self, parent):
-        super(LowVoltageTool, self).__init__(parent, title="Low Voltage Tool")
+        no_resize = wx.DEFAULT_FRAME_STYLE & ~(
+            wx.RESIZE_BORDER |
+            wx.MAXIMIZE_BOX |
+            wx.MAXIMIZE_BOX |
+            wx.MINIMIZE
+        )
+        super(LowVoltageTool, self).__init__(parent, title="Low Voltage Tool", style=no_resize)
         # Binding models to GUI
         self.initUI()
         self.Show(True)
         self.Maximize(True)
+
 
     def initUI(self):
         # Horizontal box layout
