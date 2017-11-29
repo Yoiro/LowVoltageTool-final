@@ -92,7 +92,7 @@ class PaintPanel(wx.Panel):
                 x, y = event.GetX(), event.GetY()
                 frontNode = NodeRepr()
                 frontNode.circle = FC.Circle(XY=(x, y), Diameter=NodeDrawer.size)
-                dc.DrawCircle(*frontNode.circle.__dict__.items())
+                dc.DrawCircle(frontNode.circle.XY[0], frontNode.circle.XY[1], NodeDrawer.size/2)
                 Engine.Instance().releaseFocus()
                 Engine.Instance().AddNode(frontNode)
 
