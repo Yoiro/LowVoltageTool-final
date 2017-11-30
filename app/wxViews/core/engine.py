@@ -13,8 +13,8 @@ class Engine:
     def OnRightClick(self, event):
         if self.toolbarClicked:
             self.toolbarClicked = False
-            print("ok négro désolé")
             # Reinitialize drawer state
+            self.drawer = None
         event.Skip()
 
     def releaseFocus(self):

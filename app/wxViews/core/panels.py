@@ -12,11 +12,11 @@ class ToolBar(wx.Panel):
         super(ToolBar, self).__init__(parent=parent)
         layout = wx.GridSizer(rows=5, cols=1, gap=(parent.GetSize()[0]/50, parent.GetSize()[1]/50))
         # Node, Branch, Bracket, User, PV
-        self.node_btn = wx.Button(self, id=wx.ID_ANY, label="Node")
-        self.branch_btn = wx.Button(self, id=wx.ID_ANY, label="Branch")
-        self.user_btn = wx.Button(self, id=wx.ID_ANY, label="User")
-        self.pv_btn = wx.Button(self, id=wx.ID_ANY, label="PV")
-        self.eraser_btn = wx.Button(self, id=wx.ID_ANY, label="Eraser")
+        self.node_btn = wx.Button(self, id=wx.ID_ANY, label="Node", name="node")
+        self.branch_btn = wx.Button(self, id=wx.ID_ANY, label="Branch", name="branch")
+        self.user_btn = wx.Button(self, id=wx.ID_ANY, label="User", name="user")
+        self.pv_btn = wx.Button(self, id=wx.ID_ANY, label="PV", name="pv")
+        self.eraser_btn = wx.Button(self, id=wx.ID_ANY, label="Eraser", name="eraser")
 
         self.bindEvents()
 
@@ -46,23 +46,22 @@ class ToolBar(wx.Panel):
         source = event.GetEventObject()
         if not Engine.Instance().toolbarClicked:
             Engine.Instance().toolbarClicked = True
-            if source.GetLabel() == "Node":
+            if source.GetName() == "node":
                 # Initialize Drawer state
-                print("build node enabled")
                 Engine.Instance().drawer = NodeDrawer()
                 Engine.Instance().item = "Node"
-            elif source.GetLabel() == "Branch":
+            elif source.GetName() == "branch":
                 # Initialize Drawer state
-                print("Imma draw a Branch :D")
-            elif source.GetLabel() == "User":
+                pass
+            elif source.GetName() == "user":
                 # Initialize Drawer state
-                print("Imma put a User huehuehue")
-            elif source.GetLabel() == "PV":
-                # Initialize Drawer state
-                print("PRAISE THE SUN YOU MOFO")
+                pass
+            elif source.GetName() == "pv":
+                # Initialize Drawer stavte
+                pass
             else:
                 # Initialize Drawer state
-                print("IMMA ERASE YOU AND NO ONE WILL KNOW YOU EVER EXISTED HUEHUEHUARHUEHAUHRUAE")
+                pass
         event.Skip()
 
 
@@ -159,9 +158,8 @@ class TabbedGrid(Observer):
 
     def update(self, *args, **kwargs):
         self.network = Engine.Instance().network
-        for item in self.network.items:
-            print(item)
-        print("Network updated!")
+        cells = [item for item in self.network.items]
+        # Update, Add, Fill cells here
 
     def GetValue(self, row, col):
         return str(self.network.item[row][col])
