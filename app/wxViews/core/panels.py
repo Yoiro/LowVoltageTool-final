@@ -1,9 +1,9 @@
-from wx.grid import Grid
 from wx.lib.floatcanvas.FloatCanvas import FloatCanvas
 from app.wxViews.core import Engine
 from app.wxViews.core.items import *
 from app.wxViews.core.drawers import NodeDrawer
-from app.wxViews.patterns.observer import Observer
+from app.wxViews.core.table import TabbedGrid
+
 
 
 class ToolBar(wx.Panel):
@@ -100,11 +100,11 @@ class DetailsPanel(wx.Panel):
     """Show network elements and their values"""
     def __init__(self, parent):
         super(DetailsPanel, self).__init__(parent=parent)
+        self.sizer = wx.BoxSizer(orient=wx.VERTICAL)
         self.initGUI()
 
     def initGUI(self):
         # Vertical Box Layout
-        sizer = wx.BoxSizer(orient=wx.VERTICAL)
         # Tabbed Panel
         notebook = TabbedGrid(self)
         # Add the button to launch the load flow
@@ -112,54 +112,8 @@ class DetailsPanel(wx.Panel):
         # set layouts
         low_szr = wx.BoxSizer(orient=wx.HORIZONTAL)
         low_szr.Add(loadflow_btn, 1, flag=wx.EXPAND)
-        sizer.Add(notebook.notebook, proportion=4.5, flag=wx.TOP|wx.EXPAND)
-        sizer.Add(low_szr, proportion=0.5, flag=wx.BOTTOM)
-        self.SetSizerAndFit(sizer)
+        self.sizer.Add(notebook.notebook, proportion=4.5, flag=wx.TOP|wx.EXPAND)
+        self.sizer.Add(low_szr, proportion=0.5, flag=wx.BOTTOM)
+        self.SetSizerAndFit(self.sizer)
 
         self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
-
-
-class TabbedGrid(Observer):
-    def __init__(self, parent):
-        super(TabbedGrid, self).__init__()
-        # Get Top level network
-        self.network = Engine.Instance().network
-        Engine.Instance().network.register(self)
-        self.notebook = wx.Notebook(parent, id=wx.ID_ANY)
-        # Initialize Tabs
-        self.tab1 = wx.grid.Grid(self.notebook, id=wx.ID_ANY, name="IN")
-        self.tab1.CreateGrid(len(self.network.items), 5)
-        self.tab1.ShowScrollbars(wx.SHOW_SB_DEFAULT, wx.SHOW_SB_DEFAULT)
-        self.tab2 = wx.grid.Grid(self.notebook, id=wx.ID_ANY, name="OUT")
-        self.tab2.CreateGrid(len(self.network.items), 5)
-        self.tab2.ShowScrollbars(wx.SHOW_SB_DEFAULT, wx.SHOW_SB_DEFAULT)
-        # Add Tabs to the Tabbed Panel
-        self.notebook.AddPage(self.tab1, "IN")
-        self.notebook.AddPage(self.tab2, "OUT")
-        # Binding events
-        self.notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGED, self.OnPageChanged)
-        self.notebook.Bind(wx.EVT_NOTEBOOK_PAGE_CHANGING, self.OnPageChanging)
-
-        self.notebook.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
-        self.tab1.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
-        self.tab2.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
-
-    def OnPageChanged(self, event):
-        old = event.GetOldSelection()
-        new = event.GetSelection()
-        sel = self.notebook.GetSelection()
-        event.Skip()
-
-    def OnPageChanging(self, event):
-        old = event.GetOldSelection()
-        new = event.GetSelection()
-        sel = self.notebook.GetSelection()
-        event.Skip()
-
-    def update(self, *args, **kwargs):
-        self.network = Engine.Instance().network
-        cells = [item for item in self.network.items]
-        # Update, Add, Fill cells here
-
-    def GetValue(self, row, col):
-        return str(self.network.item[row][col])

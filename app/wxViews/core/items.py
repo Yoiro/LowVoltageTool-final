@@ -14,6 +14,7 @@ class NodeRepr:
         self.id = NodeRepr.counter
         self.circle = circle
         NodeRepr.counter += 1
+        self.name = "Node %s" % self.id
 
 
 class NetworkRepr(Observable):
