@@ -1,20 +1,5 @@
-import wx
-from app.Models.networknode import NetworkNode
-from wx.lib.floatcanvas import FloatCanvas as FC
-from app.Models.network import Network
-from app.wxViews.patterns.observer import Observable
-
-
-class NodeRepr:
-    """Contains GUI info and model info"""
-    counter = 0
-
-    def __init__(self, pos=(0,0), diameter=0, node: NetworkNode = NetworkNode(), circle=None):
-        self.backingNode = node
-        self.id = NodeRepr.counter
-        self.circle = circle
-        NodeRepr.counter += 1
-        self.name = "Node %s" % self.id
+from app.models.network import Network
+from app.wxviews.patterns.observer import Observable
 
 
 class NetworkRepr(Observable):

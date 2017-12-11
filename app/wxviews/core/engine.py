@@ -1,5 +1,5 @@
-from app.wxViews.core.items import NetworkRepr
-from app.wxViews.patterns.singleton import Singleton
+from app.wxviews.items.networkrepr import NetworkRepr
+from app.wxviews.patterns.singleton import Singleton
 
 
 @Singleton

@@ -1,10 +1,5 @@
-import wx
-
-
-class Drawer:
-    """This class will contain top level informations about how we want items to be drown"""
-    color = wx.BLACK
-    size_hint = 1
+from app.wxviews.drawers import *
+from app.wxviews.drawers.drawer import Drawer
 
 
 class NodeDrawer(Drawer):

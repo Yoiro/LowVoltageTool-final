@@ -1,6 +1,8 @@
 import wx
-from app.wxViews.core.panels import DetailsPanel, PaintPanel, ToolBar
-from app.wxViews.core import Engine
+from app.wxviews.core import Engine
+from app.wxviews.panels.detailspanel import DetailsPanel
+from app.wxviews.panels.toolbar import ToolBar
+from app.wxviews.panels.paintpanel import PaintPanel
 
 
 class LowVoltageTool(wx.Frame):
@@ -10,6 +12,7 @@ class LowVoltageTool(wx.Frame):
             wx.RESIZE_BORDER |
             wx.MAXIMIZE_BOX |
             wx.MAXIMIZE_BOX |
+            wx.MINIMIZE_BOX |
             wx.MINIMIZE
         )
         super(LowVoltageTool, self).__init__(parent, title="Low Voltage Tool", style=no_resize)

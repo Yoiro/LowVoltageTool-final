@@ -1,4 +1,4 @@
-from app.Serialization.serialization import Serialization
+from app.serialization.serialization import Serialization
 
 
 # Metaclass for Singleton Pattern

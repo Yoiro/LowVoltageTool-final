@@ -3,7 +3,7 @@ from Models.network import Network
 from Models.networknode import NetworkNode
 from Models.networkuser import NetworkUser
 
-from app.Models.networkbranch import NetworkBranch
+from app.models.networkbranch import NetworkBranch
 
 
 class Serialization:

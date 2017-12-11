@@ -3,7 +3,7 @@ from time import process_time
 import numpy as np
 from scipy.sparse import block_diag
 
-from app.Models.timestamp import Timestamp
+from app.models.timestamp import Timestamp
 import os
 
 
@@ -422,8 +422,8 @@ class SimulationLF:
 
 
 if __name__ == '__main__':
-    from app.Models.singleton import NetworkManager
-    from app.Serialization.serialization import Serialization
+    from app.models.singleton import NetworkManager
+    from app.serialization.serialization import Serialization
     sim = SimulationLF(tol=0.01)
     manager = NetworkManager()
     import warnings
