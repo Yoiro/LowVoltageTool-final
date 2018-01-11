@@ -2,7 +2,7 @@ from app.models.networknode import NetworkNode
 
 
 class NodeRepr:
-    """Contains GUI info and model info"""
+    """Contains GUI info and model info for the Node"""
     counter = 0
 
     def __init__(self, pos=(0,0), diameter=0, node: NetworkNode = NetworkNode(), circle=None):

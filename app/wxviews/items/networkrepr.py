@@ -3,6 +3,8 @@ from app.wxviews.patterns.observer import Observable
 
 
 class NetworkRepr(Observable):
+    """This class works as a wrapper/manager for all our GUI elements. 
+    Thus it will contain every single element added to the application"""
     def __init__(self):
         super(NetworkRepr, self).__init__()
         self.network = Network()

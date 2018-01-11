@@ -2,6 +2,7 @@ from app.wxviews.panels.table import *
 
 
 class TabbedGrid:
+    """Wraps the two grids showing the information of the elements in the network"""
     def __init__(self, parent):
         super(TabbedGrid, self).__init__()
         # Register as an observer of Top level network

@@ -2,6 +2,7 @@ from app.wxviews.panels.table import *
 
 
 class InputGrid(GridTableBase):
+    """Used to display the Input parameters for launching a load flow"""
     def __init__(self, parent, data):
         super(InputGrid, self).__init__()
         self.data = data

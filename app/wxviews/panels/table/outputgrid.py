@@ -2,6 +2,7 @@ from app.wxviews.panels.table import *
 
 
 class OutputGrid:
+    """Displays the output of the load flow in a grid"""
     def __init__(self, parent):
         super(OutputGrid, self).__init__()
         Engine.Instance().network.register(self)

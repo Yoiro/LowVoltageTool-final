@@ -10,10 +10,12 @@ under the watch of Electrical Engineering Service of Mons' Polytechnic Faculty (
 
 python==3.6.0
 anytree==2.0.0
-Kivy==1.10.0
 openpyxl==2.4.4
+wxPython==4.0.0b2
 numpy==1.13.1
 scipy==0.19.1
+
+Be careful that numpy, scipy and wxPython versions are subject to changes as those are still in development.
 
 ------
 ### Tasks 
@@ -23,64 +25,29 @@ scipy==0.19.1
 - [ ] Finish the GUI
 
 See more on this [Trello](https://trello.com/b/EAq94Q1x/outil-basse-tension-gui)
-
 -----
-### Model Classes
-----
-#### Bracket
-**Bracket** corresponds to an association between a *NetworkNode* and a *NetworkBranch*
-#### Network
-**Network** contains the list of all *Brackets* involved in an electrical network. We will be able to navigate through it by using this class.
 
-#### NetworkBranch
-**NetworkBranch** is basically the representation of a cable, which means that it'll have a bit of attributes: *phases*, *length*, resistance *r*, reactance *x*, and a maximum amount of electricity it can handle *Imax*. This class will also allow us to calculate its own impedance by the mean of the method **calculate_impedance()**
+### Contribute
 
-#### NetworkNode
-**NetworkNode** will be a physical spot where the network will be divided. It will possess an *identifier*, a *parent*, a list of *NetworkUser*, the *voltage_min* and the *voltage_max*.
+#### On Windows
 
-#### NetworkUser
-**NetworkUser** represents some... user... of the ...network. It is most likely a house, connected to the network by some phases and consuming some power. To simplify things, we have chosen to split the power into two attributes: *P* standing for the real part of the power and *Q* standing for its complex/imaginary part. 
+1. Install [virtualenv](http://docs.python-guide.org/en/latest/dev/virtualenvs/) globally
+``` pip install virtualenv ```
+2. Create a virtual environment for this project and then activate it.
+3. Install the requirements.
+4. run ``` pip install -r requirements-win.txt ```
+5. Install the dependencies except Numpy and Scipy.
+6. Download [numpy+mkl](https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy) (Choose depending on your platform).
+7. Download [scipy](https://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy) (Choose depending on your platform).
+8. Install them ```pip install numpy*.whl && pip install scipy*.whl```
 
-#### NetworkManager
-This class is a bit special. In some way it will implement the Singleton desgin pattern by inheriting of the metaclass **Singleton**. Its behaviour will be as follow: we will be able to instanciate many objects of NetworkManager, but each of them will refer to the same memory address.
+#### On Debian
 
-#### SimulationLF
-**SimulationLF** is the class in which all the magic happens. It will define our load-flow algorithm, our grid-definition (the way we will represent the network programatically) but also it will be the class that will be called if we launch the Low Voltage Tool in console mode.
+1. Before installing the requirements, I suggest to use (if you don't use it yet) [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
+2. Install the requirements for debian: ```pip install -r requirements-debian.txt```
+3. Install wxPython:
+    pip install -U \
+        -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 \
+        wxPython
+4. You're now good to go.
 
----------------------------
-### Graphic View Classes
-----
-#### MenuBar
-Implements a simple Menu/Action bar with 'save', 'load', 'quit', and 'new' options.
-
-#### LowVoltageTool
-This class represent the main widget for our **LowVoltageTollApp** application.
-
-=================================================================
-### Panels
-
-=================================================================
-#### ButtonPanel
-This one will conain a GridLayout with clickable buttons to enter build mode for the different network elements: 'NetworkNode', 'NetworkBranch', 'Accumulator', 'User', 'PhotoVoltaic Panel', ...
-
-#### ElementsPanel
-In this panel we will show the details of a selected element.
-
-#### NetworkDrawPanel
-This one will be our canvas. The user will be able to draw a network in this panel by adding nodes, branches, brackets, pvs, users, ...
-
-
-=================================================================
-### Graphic Items
-
-=================================================================
-#### NodeRepr
-This class will be linked to a NetworkNode item and will also implement graphic instructions such as position in the network being drawn.
-
-#### BranchRepr
-This one will work the same way as **NodeRepr** but it will be linked to a branch.
-
-#### NetworkRepr
-This class will contain lists of all graphics items that are present into the drawing area.
-
------
