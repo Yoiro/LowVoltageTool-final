@@ -49,27 +49,27 @@ Package containing the elements used to implement a table.
 InputGrid
 =========
 .. autoclass:: InputGrid
-
+   :members:
 OutputGrid
 ==========
 .. autoclass:: OutputGrid
-
+   :members:
 TabbedGrid
 ==========
 .. autoclass:: TabbedGrid
-
+   :members:
 DetailsPanel
 ============
 .. autoclass:: DetailsPanel
-
+   :members:
 PaintPanel
 ==========
 .. autoclass:: PaintPanel
-
+   :members
 ToolBar
 =======
 .. autoclass:: ToolBar
-
+   :members
 Patterns
 ========
 Package containing modules to implement some design patterns
@@ -77,8 +77,10 @@ Package containing modules to implement some design patterns
 Observer
 ========
 .. autoclass:: Observer
+   :members:
 .. autoclass:: Observable
-
+   :members:
 Singleton
 =========
 .. autoclass:: Singleton
+   :members:

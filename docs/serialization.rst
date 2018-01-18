@@ -5,8 +5,9 @@ The modules described here are used to register the state of the application for
 Serialization
 =============
 .. autoclass:: Serialization
+   :members:
 
 UiSerial
 ========
 .. autoclass:: SerializationUI
-
+   :members:
