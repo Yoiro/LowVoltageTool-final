@@ -245,7 +245,9 @@ wheels\
 wheels\*
 kivytuto\.kv
 
-# Requirements
-requirements.txt
+# Sphinx
+_build
+_static
+_templates
 
 
