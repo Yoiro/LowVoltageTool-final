@@ -1,24 +1,31 @@
-# Models
+Models
 ========
 The classes listed here are those used by the core of the Low Voltage Tool. Those can be considered as the backend of the application.
 
-## Bracket
+Bracket
+=======
 .. autoclass:: Bracket
 
-## Network
+Network
+=======
 .. autoclass:: Network
 
-## NetworkBranch
+NetworkBranch
+=============
 .. autoclass:: NetworkBranch
 
-## NetworkNode
+NetworkNode
+===========
 .. autoclass:: NetworkNode
 
-## NetworkUser
+NetworkUser
+===========
 .. autoclass:: NetworkUser
 
-## SimulationLF
+SimulationLF
+============
 .. autoclass:: SimulationLF
 
-## Singleton
+Singleton
+=========
 .. autoclass:: Singleton

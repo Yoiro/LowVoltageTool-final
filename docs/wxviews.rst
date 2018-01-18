@@ -1,64 +1,84 @@
-# WXViews
+WXViews
 =========
 Modules, packages and subpackages used to implement the Graphical User Interface for the Low Voltage Tool.
 
-## Core
+Core
+====
 Main classes that will be used by all Graphical Items
 
-### Engine
+Engine
+======
 .. autoclass:: Engine
 
-### Window
+Window
+======
 .. autoclass:: LowVoltageTool
 
-## Drawers
+Drawers
+=======
 Contains modules that tells the Tool how to build the different items.
 
-### Drawer
+Drawer
+======
 .. autoclass:: Drawer
 
-### NodeDrawer
+NodeDrawer
+==========
 .. autoclass:: NodeDrawer
 
-## Items
+Items
+=====
 All graphical items that encapsulates the items from the models package.
 
-### NetworkRepr
+NetworkRepr
+===========
 .. autoclass:: NetworkRepr
 
-### NodeRepr
+NodeRepr
+========
 .. autoclass:: NodeRepr
 
-## Panels
+Panels
+======
 Main containers of the application.
 
-### Table
+Table
+=====
 Package containing the elements used to implement a table.
 
-#### InputGrid
+InputGrid
+=========
 .. autoclass:: InputGrid
 
-#### OutputGrid
+OutputGrid
+==========
 .. autoclass:: OutputGrid
 
-#### TabbedGrid
+TabbedGrid
+==========
 .. autoclass:: TabbedGrid
 
-### DetailsPanel
+DetailsPanel
+============
 .. autoclass:: DetailsPanel
 
-### PaintPanel
+PaintPanel
+==========
 .. autoclass:: PaintPanel
 
-### ToolBar
+ToolBar
+=======
 .. autoclass:: ToolBar
 
-## Patterns
+Patterns
+========
 Package containing modules to implement some design patterns
 
-### Observer
+Observer
+========
 .. autoclass:: Observer
 .. autoclass:: Observable
 
-### Singleton
+Singleton
+=========
 .. autoclass:: Singleton

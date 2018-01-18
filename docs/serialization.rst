@@ -1,10 +1,12 @@
-# Serialization
+Serialization
 ===============
 The modules described here are used to register the state of the application for further use.
 
-## Serialization
+Serialization
+=============
 .. autoclass:: Serialization
 
-## UiSerial
+UiSerial
+========
 .. autoclass:: SerializationUI
 
