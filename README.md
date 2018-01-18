@@ -50,4 +50,4 @@ See more on this [Trello](https://trello.com/b/EAq94Q1x/outil-basse-tension-gui)
         -f https://wxpython.org/Phoenix/snapshot-builds/linux/gtk3/ubuntu-16.04 \
         wxPython
 4. You're now good to go.
-
+N.B.: The projet uses some libraries that depends on Windows. It should behave differently on a Linux distribution (or some features will just be missing).
