@@ -22,3 +22,7 @@ class Observable:
     def update_observers(self, *args, **kwargs):
         for observer in self.observers:
             observer.update(*args, **kwargs)
+
+
+if __name__ == '__main__':
+    pass

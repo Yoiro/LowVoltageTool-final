@@ -31,3 +31,7 @@ class Engine:
     def UpdateNode(self, node):
         i = self.network.nodes_repr.index(node)
         self.network.updateNode(node, i)
+
+
+if __name__ == '__main__':
+    pass

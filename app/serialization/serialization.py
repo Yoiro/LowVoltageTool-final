@@ -1,9 +1,8 @@
-from Models.bracket import *
-from Models.network import Network
-from Models.networknode import NetworkNode
-from Models.networkuser import NetworkUser
-
+from app.models.bracket import *
+from app.models.network import Network
 from app.models.networkbranch import NetworkBranch
+from app.models.networknode import NetworkNode
+from app.models.networkuser import NetworkUser
 
 
 class Serialization:
@@ -99,3 +98,7 @@ class Serialization:
                 network.set_parent_of_bracket(bracket, node.get_parent_id()-1)
         # Return the network created from the XL file.
         return network
+
+
+if __name__ == '__main__':
+    pass

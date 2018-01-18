@@ -122,3 +122,7 @@ class NetworkNode(NodeMixin):
 
     def __eq__(self, other):
         return True if self.__identifier == other.__identifier else False
+
+
+if __name__ == '__main__':
+    pass

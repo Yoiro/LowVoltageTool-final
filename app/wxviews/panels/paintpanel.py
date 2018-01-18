@@ -23,7 +23,7 @@ class PaintPanel(wx.Panel):
         # It is no more than a function without definition.
         self.canvas.Bind(wx.EVT_LEFT_UP, lambda event, panel=self.canvas: self.OnLeftClick(event))
         self.canvas.Bind(wx.EVT_PAINT, self.OnWindowBack)
-        self.canvas.Bind(wx.EVT_HIBERNATE)
+#        self.canvas.Bind(wx.EVT_HIBERNATE)
 
     def OnWindowBack(self, event):
         pass
@@ -38,3 +38,7 @@ class PaintPanel(wx.Panel):
                 dc.DrawCircle(frontNode.circle.XY[0], frontNode.circle.XY[1], NodeDrawer.size/2)
                 Engine.Instance().releaseFocus()
                 Engine.Instance().AddNode(frontNode)
+
+
+if __name__ == '__main__':
+    pass

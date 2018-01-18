@@ -46,3 +46,7 @@ class Bracket:
     # To String method
     def __str__(self):
         return self.__node.__str__()
+
+
+if __name__ == '__main__':
+    pass

@@ -59,3 +59,7 @@ class ToolBar(wx.Panel):
                 # Initialize Drawer state
                 pass
         event.Skip()
+
+
+if __name__ == '__main__':
+    pass

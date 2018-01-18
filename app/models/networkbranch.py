@@ -105,3 +105,7 @@ class NetworkBranch:
 
     def __str__(self):
         return "Branch"+" Phases: "+str(self.__phases)
+
+
+if __name__ == '__main__':
+    pass

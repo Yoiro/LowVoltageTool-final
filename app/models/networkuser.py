@@ -58,3 +58,7 @@ class NetworkUser:
         :return:
         """
         self.__Q = q
+
+
+if __name__ == '__main__':
+    pass

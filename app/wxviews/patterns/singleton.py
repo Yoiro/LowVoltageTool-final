@@ -37,3 +37,7 @@ class Singleton:
 
     def __instancecheck__(self, inst):
         return isinstance(inst, self._decorated)
+
+
+if __name__ == '__main__':
+    pass

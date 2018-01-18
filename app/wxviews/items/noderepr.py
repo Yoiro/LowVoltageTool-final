@@ -11,3 +11,7 @@ class NodeRepr:
         self.circle = circle
         NodeRepr.counter += 1
         self.name = "Node %s" % self.id
+
+
+if __name__ == '__main__':
+    pass

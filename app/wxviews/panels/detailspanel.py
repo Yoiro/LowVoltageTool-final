@@ -23,3 +23,7 @@ class DetailsPanel(wx.Panel):
         self.SetSizerAndFit(self.sizer)
 
         self.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
+
+
+if __name__ == '__main__':
+    pass

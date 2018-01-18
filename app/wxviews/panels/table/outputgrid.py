@@ -14,3 +14,7 @@ class OutputGrid:
 
     def bind_events(self):
         self.grid.Bind(wx.EVT_RIGHT_UP, Engine.Instance().OnRightClick)
+
+
+if __name__ == '__main__':
+    pass

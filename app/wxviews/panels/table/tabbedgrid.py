@@ -59,3 +59,7 @@ class TabbedGrid:
 
     def GetValue(self, row, col):
         return str(self.network.item[row][col])
+
+
+if __name__ == '__main__':
+    pass

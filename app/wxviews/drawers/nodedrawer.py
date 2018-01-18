@@ -14,3 +14,7 @@ class NodeDrawer(Drawer):
 
     def OnNodeUpdate(self, node):
         self.node = node
+
+
+if __name__ == '__main__':
+    pass

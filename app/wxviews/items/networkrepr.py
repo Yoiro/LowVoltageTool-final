@@ -43,3 +43,7 @@ class NetworkRepr(Observable):
         self.branches_repr[index] = branch
         self.items[self.branches_repr.index(branch)] = branch
         self.update_observers()
+
+
+if __name__ == '__main__':
+    pass

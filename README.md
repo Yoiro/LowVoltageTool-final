@@ -46,8 +46,8 @@ See more on this [Trello](https://trello.com/b/EAq94Q1x/outil-basse-tension-gui)
 1. Before installing the requirements, I suggest to use (if you don't use it yet) [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/)
 2. Install the requirements for debian: ```pip install -r requirements-debian.txt```
 3. Install wxPython:
-    pip install -U \
-        -f https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-16.04 \
+    pip install -U --pre \
+        -f https://wxpython.org/Phoenix/snapshot-builds/linux/gtk3/ubuntu-16.04 \
         wxPython
 4. You're now good to go.
 

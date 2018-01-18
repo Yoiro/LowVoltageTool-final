@@ -53,3 +53,7 @@ class NetworkManager(metaclass=Singleton):
     def load_network_from_xlsx(path_to_file):
         ntw = Serialization.load_network_from_XLSX(path_to_file)
         return ntw
+
+
+if __name__ == '__main__':
+    pass

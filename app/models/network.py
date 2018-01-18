@@ -190,3 +190,7 @@ class Network:
             string += "\t" + "Bracket" + "[ " + bracket.__str__()+"]\n"
         string += "}"
         return string
+
+
+if __name__ == '__main__':
+    pass
