@@ -8,13 +8,7 @@ from app.wxviews.panels.paintpanel import PaintPanel
 class LowVoltageTool(wx.Frame):
     """Main Window"""
     def __init__(self, parent):
-        no_resize = wx.DEFAULT_FRAME_STYLE & ~(
-            wx.RESIZE_BORDER |
-            wx.MAXIMIZE_BOX |
-            wx.MAXIMIZE_BOX |
-            wx.MINIMIZE_BOX |
-            wx.MINIMIZE
-        )
+        no_resize = wx.DEFAULT_FRAME_STYLE 
         super(LowVoltageTool, self).__init__(parent, title="Low Voltage Tool", style=no_resize)
         # Binding models to GUI
         self.initUI()
