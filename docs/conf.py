@@ -18,14 +18,8 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../app/models'))
-sys.path.insert(0, os.path.abspath('../app/serialization'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/core'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/drawers'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/items'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/panels'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/panels/table'))
-sys.path.insert(0, os.path.abspath('../app/wxviews/patterns'))
+# sys.path.insert(0, os.path.abspath('../app/models'))
+sys.path.append(os.path.join(os.path.dirname(__name__), ".."))
 
 
 # -- General configuration ------------------------------------------------

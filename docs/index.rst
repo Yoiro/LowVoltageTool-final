@@ -10,9 +10,7 @@ Welcome to Low Voltage Tool's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   models
-   wxviews
-   serialization
+.. automodule:: app
 
 
 Indices and tables
