@@ -19,7 +19,7 @@
 import os
 import sys
 sys.path.insert(0, u'/home/alastard/dev/LowVoltageTool-final/app')
-
+sys.path.insert(0, u'/home/alastard/dev/LowVoltageTool-final/app.models')
 
 # -- General configuration ------------------------------------------------
 
