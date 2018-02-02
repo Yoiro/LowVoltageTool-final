@@ -1,31 +1,25 @@
 # LowVoltageTool
----------------------------------------------------------------
 **Low Voltage Tool** is the project I made for my Bachelor's thesis at Haute Ecole Louvain en Hainaut - Mons. This project is being built
 under the watch of Electrical Engineering Service of Mons' Polytechnic Faculty (GELE). All the rights of the project are reserved to GELE.
 
 ## Overview
----------------------------------------------------------------
 
 ### Libraries
 
-python==3.6.0
-anytree==2.0.0
-openpyxl==2.4.4
-wxPython==4.0.0b2
-numpy==1.13.1
-scipy==0.19.1
+python==3.6.0  
+anytree==2.0.0  
+openpyxl==2.4.4  
+wxPython==4.0.0b2  
+numpy==1.13.1  
+scipy==0.19.1  
 
 Be careful that numpy, scipy and wxPython versions are subject to changes as those are still in development.
 
-------
 ### Tasks 
 - [x] Build a model structure
 - [x] Translate load-flow algorithm from Matlab to Python
 - [x] Build a basis for implementing a Graphical User Inteface
 - [ ] Finish the GUI
-
-See more on this [Trello](https://trello.com/b/EAq94Q1x/outil-basse-tension-gui)
------
 
 ### Contribute
 
