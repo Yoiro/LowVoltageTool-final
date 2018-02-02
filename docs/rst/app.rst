@@ -1,6 +1,15 @@
 app package
 ===========
 
+Subpackages
+-----------
+
+.. toctree::
+
+    app.models
+    app.serialization
+    app.wxviews
+
 Module contents
 ---------------
 
