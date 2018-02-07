@@ -1,3 +1,6 @@
+"""Contains the class PaintPanel"""
+
+
 from app.wxviews.panels import *
 from wx.lib.floatcanvas.FloatCanvas import FloatCanvas
 from app.wxviews.items.noderepr import NodeRepr

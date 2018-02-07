@@ -1,12 +1,15 @@
+"""Contains the main window"""
+
+
 import wx
-from app.wxviews.core import Engine
+from .engine import Engine
 from app.wxviews.panels.detailspanel import DetailsPanel
 from app.wxviews.panels.toolbar import ToolBar
 from app.wxviews.panels.paintpanel import PaintPanel
 
 
 class LowVoltageTool(wx.Frame):
-    """Main Window"""
+    """Main Window class"""
     def __init__(self, parent):
         no_resize = wx.DEFAULT_FRAME_STYLE & ~(
             wx.RESIZE_BORDER |

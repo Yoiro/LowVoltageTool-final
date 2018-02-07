@@ -1,3 +1,6 @@
+"""Contains a non-thread-safe Singleton for the GUI"""
+
+
 class Singleton:
     """
     A non-thread-safe helper class to ease implementing singletons.

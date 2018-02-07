@@ -1,2 +1,6 @@
-from app.wxviews.core.engine import Engine
+"""Contains the main modules of the application"""
+
+
 import wx
+
+from . import engine, window

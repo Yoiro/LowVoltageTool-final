@@ -1,12 +1,20 @@
+"""Contains the class Network."""
+
+
 from anytree.walker import Walker
 import numpy as np
 
 
 class Network:
+    """
+    A Network is defined here by its Voltage at Slack Node (called 'Voltage No Load').
+    It also contains a list of all brackets, and the methods that will be used to manage them.
+    Be aware that some methods written in this class are not even used in the tool, but are there
+    because they were implemented in an older version, and are there 'just in case'.
+    """
     # CONSTRUCTOR
     def __init__(self, vnl=230.):
         """
-        A Network is defined here by its Voltage at Slack Node (called 'Voltage No Load').
         :param vnl: A double that will determine the initial value of the network's voltages. Default vnl=230.
         """
         self.__brackets = []

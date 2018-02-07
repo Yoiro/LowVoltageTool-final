@@ -1,4 +1,11 @@
+"""Contains the class NetworkBranch."""
+
+
 class NetworkBranch:
+    """
+    A Branch represents an edge of the Network and thus it stores all informations
+    relative to it: the length of the cable, its length, its resistence, etc...
+    """
     # CONSTRUCTOR
     def __init__(self, phases=None, r=None, x=None, length=None, Imax=None):
         """

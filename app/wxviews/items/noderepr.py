@@ -1,3 +1,6 @@
+"""Contains NodeRepr class"""
+
+
 from app.models.networknode import NetworkNode
 
 

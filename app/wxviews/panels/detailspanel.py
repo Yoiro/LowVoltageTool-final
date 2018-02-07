@@ -1,3 +1,6 @@
+"""Contains the class DetailsPanel"""
+
+
 from app.wxviews.panels.table.tabbedgrid import TabbedGrid
 from app.wxviews.panels import *
 

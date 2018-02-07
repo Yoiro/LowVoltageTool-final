@@ -1,9 +1,12 @@
+"""Contains the class ToolBar"""
+
+
 from app.wxviews.panels import *
 from app.wxviews.drawers.nodedrawer import NodeDrawer
 
 
 class ToolBar(wx.Panel):
-    """Tool Bar with buttons for drawing"""
+    """Toolbar that gives people the tools for building a network."""
     def __init__(self, parent):
         super(ToolBar, self).__init__(parent=parent)
         layout = wx.GridSizer(rows=5, cols=1, gap=(parent.GetSize()[0]/50, parent.GetSize()[1]/50))

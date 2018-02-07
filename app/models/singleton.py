@@ -1,8 +1,12 @@
+"""Contains the Singleton Implementation for the models and the class NetworkManager."""
+
+
 from app.serialization.serialization import Serialization
 
 
 # Metaclass for Singleton Pattern
 class Singleton(type):
+    """Simple implementation of the Singleton design pattern."""
     __instance = None
 
     def __call__(cls, *args, **kwargs):
@@ -19,7 +23,9 @@ class Singleton(type):
 # This class implements Singleton Pattern and will contain every Network in our database
 class NetworkManager(metaclass=Singleton):
     """
-    List<Network> networks
+    Class designed to manage multiple network so it will further be able to behave like a
+    super-network (maybe we should call this a cluster of network).
+    Thus, it contains network management functions.
     """
 
     def __init__(self):

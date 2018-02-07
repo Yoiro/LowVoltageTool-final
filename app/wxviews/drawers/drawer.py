@@ -1,3 +1,6 @@
+"""Contains Drawer class"""
+
+
 from app.wxviews.drawers import *
 
 

@@ -1,9 +1,13 @@
+"""Contains class Engine."""
+
+
 from app.wxviews.items.networkrepr import NetworkRepr
 from app.wxviews.patterns.singleton import Singleton
 
 
 @Singleton
 class Engine:
+    """This class handles top-level information that needs to be transited between GUI items."""
     def __init__(self):
         self.toolbarClicked = False
         self.network = NetworkRepr()
@@ -31,3 +35,7 @@ class Engine:
     def UpdateNode(self, node):
         i = self.network.nodes_repr.index(node)
         self.network.updateNode(node, i)
+
+
+if __name__ == '__main__':
+    pass

@@ -1,7 +1,14 @@
+"""Contains the class NetworkNode."""
+
+
 from anytree import NodeMixin
 
 
 class NetworkNode(NodeMixin):
+    """
+    A NetworkNode contains information of a point in the network where people can connect to it.
+    Therefore it has a list of NetworkUser, and stores information about the voltage that passes through it.
+    """
     # CONSTRUCTOR
     def __init__(self, identifier=0, parent=None, users=None, voltage_min=0, voltage_max=0):
         """

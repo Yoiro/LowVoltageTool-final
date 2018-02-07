@@ -1,11 +1,12 @@
+"""Contains class NetworkUser."""
 
 
 class NetworkUser:
-
+    """Those are the people/entities that will connect to the network to take its power."""
     # CONSTRUCTOR
     def __init__(self, phases=None, P=None, Q=None):
         """
-        A user is defined by the phases aat which it is linked, the Power that it consumes(positive)/reinjects(negative)
+        A user is defined by the phases aat which it is linked, the Power that it consumaes(positive)/reinjects(negative)
         and the Q.
         :param phases: list of 4 boolean. 1 = The User is on the phase ; 0 = The User doesn't use the phase: [1,1,1,0]
         means a user using ALL phases (The fourth index corresponds to the neutral phase)

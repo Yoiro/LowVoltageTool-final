@@ -1,3 +1,6 @@
+"""Contains NodeDrawer class"""
+
+
 from app.wxviews.drawers import *
 from app.wxviews.drawers.drawer import Drawer
 

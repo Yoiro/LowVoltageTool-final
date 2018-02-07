@@ -1,9 +1,14 @@
+"""Contains classes Observer and Observable"""
+
+
 class Observer:
+    """Implementation of the Observer Pattern."""
     def update(self):
         pass
 
 
 class Observable:
+    """Implementation of the Observer Pattern (Observable)."""
     def __init__(self):
         self.observers = []
 

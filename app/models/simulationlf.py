@@ -1,3 +1,6 @@
+"""Contains the class SimulationLF. CLI application entrypoint."""
+
+
 from time import process_time
 
 import numpy as np
@@ -8,6 +11,7 @@ import os
 
 
 class SimulationLF:
+    """Defines a run of the application and contains the load-flow algorithm."""
     def __init__(self, nb=1, tol=0.01, delta=Timestamp.QUARTERS):
         """
         :param nb: for number of iterations to do for Monte Carlo
@@ -51,6 +55,11 @@ class SimulationLF:
     def set_delta_time(self, d): self.__delta_time = d
 
     def grid_definition(self, network):
+        """
+        Translation of the grid_definition.mat from matlab tool.
+        This function aims to translate the hierarchical data of a network and to transform it into
+        matrices so we will be able to use it in the load-flow algorithm.
+        """
         zeros = np.zeros
         # As we are working with brackets that are containing a node and a branch, the number of brackets corresponds
         # to the number of nodes
@@ -250,6 +259,15 @@ class SimulationLF:
         return dic
 
     def powerflow(self, voltage, intensity, conj=np.conj, real=np.real, imag=np.imag):
+        """
+        Calculates a power flow.
+        :param voltage:
+        :param intensity:
+        :param conj: used for caching
+        :param real: used for caching
+        :param imag: used for caching
+        :return:
+        """
         flow = voltage * conj(intensity)
         return {
             'active': real(flow),
@@ -257,6 +275,11 @@ class SimulationLF:
         }
 
     def printMenu(self, network):
+        """
+        Prints the main menu of the CLI tool. Handles user input.
+        :param network:
+        :return:
+        """
         np.set_printoptions(threshold=np.nan, suppress=True, precision=10)
         # import re
         while True:

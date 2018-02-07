@@ -1,8 +1,13 @@
+"""Contains the class Bracket."""
+
+
 class Bracket:
+    """
+    A Bracket is the association between a Node object and a Branch object.
+    Thus, a Bracket will just contain a Node attribute and a Branch one
+    """
     def __init__(self, node=None, branch=None):
         """
-        a Bracket is the association between a Node object and a Branch object.
-        Thus, a Bracket will just contain a Node attribute and a Branch one
         :param node: the node contained by the bracket
         :param branch: the branch we want to link with the node
         """

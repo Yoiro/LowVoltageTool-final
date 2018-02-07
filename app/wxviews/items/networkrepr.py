@@ -1,3 +1,5 @@
+"""Contains NetworkRepr class"""
+
 from app.models.network import Network
 from app.wxviews.patterns.observer import Observable
 

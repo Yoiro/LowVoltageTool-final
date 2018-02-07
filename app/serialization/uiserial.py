@@ -1,10 +1,13 @@
+"""Contains SerializationUI class"""
+
+
 import json
 import os
 from os.path import dirname
 
 
 class SerializationUI:
-
+    """Handles the GUI I/O"""
     @staticmethod
     def load_network(file):
         pass
