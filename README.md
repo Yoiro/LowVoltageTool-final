@@ -21,6 +21,8 @@ Be careful that numpy, scipy and wxPython versions are subject to changes as tho
 - [x] Build a basis for implementing a Graphical User Inteface
 - [ ] Finish the GUI
 
+Documentation cant be found here: http://low-voltage-tool.readthedocs.io/en/docs/
+
 ### Contribute
 
 #### On Windows
