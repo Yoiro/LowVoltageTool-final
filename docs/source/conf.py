@@ -22,7 +22,8 @@ import sys
 
 sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../../app'))
-
+sys.path.insert(0, os.path.abspath('../../app/wxviews'))
+sys.path.insert(0, os.path.abspath('../../app/wxviews/panels'))
 
 autodoc_mock_imports = ['anytree', 'wx', 'scipy', 'numpy']
 

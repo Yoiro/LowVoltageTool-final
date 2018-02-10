@@ -12,6 +12,13 @@ Welcome to Low Voltage Tool's documentation!
 
    models
    serialization
+   wxviews
+   core
+   drawers
+   items
+   panels
+   panels.table
+   patterns
 
 
 Indices and tables

@@ -6,3 +6,4 @@ models
 
    models
    serialization
+   wxviews
