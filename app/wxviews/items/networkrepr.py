@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """Contains NetworkRepr class"""
 
 from app.models.network import Network

@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """
 This package contains the source code of the Low Voltage Tool.
 It contains the following packages:

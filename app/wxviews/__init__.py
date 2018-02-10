@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """
 Contains subpackages that implements all the aspects of the Graphical User Interface
 for the Low Voltage Tool.

@@ -34,6 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.serialization.html" title="app.serialization package"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -54,32 +57,697 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="app-models-bracket-module">
-<h2>app.models.bracket module<a class="headerlink" href="#app-models-bracket-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.bracket">
+<span id="app-models-bracket-module"></span><h2>app.models.bracket module<a class="headerlink" href="#module-app.models.bracket" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class Bracket.</p>
+<dl class="class">
+<dt id="app.models.bracket.Bracket">
+<em class="property">class </em><code class="descclassname">app.models.bracket.</code><code class="descname">Bracket</code><span class="sig-paren">(</span><em>node=None</em>, <em>branch=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.bracket.Bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A Bracket is the association between a Node object and a Branch object.
+Thus, a Bracket will just contain a Node attribute and a Branch one</p>
+<dl class="method">
+<dt id="app.models.bracket.Bracket.get_branch">
+<code class="descname">get_branch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.bracket.Bracket.get_branch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the branch of the bracket.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.bracket.Bracket.get_node">
+<code class="descname">get_node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.bracket.Bracket.get_node" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the node of the bracket.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.bracket.Bracket.set_branch">
+<code class="descname">set_branch</code><span class="sig-paren">(</span><em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.bracket.Bracket.set_branch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>branch</strong> – the new NetworkBranch we want this bracket to contain.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.bracket.Bracket.set_node">
+<code class="descname">set_node</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.bracket.Bracket.set_node" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> – the new NetworkNode we want this bracket to contain.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-network-module">
-<h2>app.models.network module<a class="headerlink" href="#app-models-network-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.network">
+<span id="app-models-network-module"></span><h2>app.models.network module<a class="headerlink" href="#module-app.models.network" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class Network.</p>
+<dl class="class">
+<dt id="app.models.network.Network">
+<em class="property">class </em><code class="descclassname">app.models.network.</code><code class="descname">Network</code><span class="sig-paren">(</span><em>vnl=230.0</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A Network is defined here by its Voltage at Slack Node (called ‘Voltage No Load’).
+It also contains a list of all brackets, and the methods that will be used to manage them.
+Be aware that some methods written in this class are not even used in the tool, but are there
+because they were implemented in an older version, and are there ‘just in case’.</p>
+<dl class="method">
+<dt id="app.models.network.Network.add_bracket">
+<code class="descname">add_bracket</code><span class="sig-paren">(</span><em>bracket</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.add_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>This method will check if the given node to add is already in the network. If not, it will add it.</div></blockquote>
+<p>Otherwise it will do nothing.
+:param bracket: the bracket to add to the network.
+:return: self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.delete_bracket">
+<code class="descname">delete_bracket</code><span class="sig-paren">(</span><em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.delete_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will delete a bracket from the network. First it checks if the network contains the id,
+then whether it is a leaf or not.
+If it is, it will simply remove it from the network.
+If it isn’t, it will remove it AND link its children to its parent.
+:param nid: ID of the node to delete
+:return: self</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.find_node">
+<code class="descname">find_node</code><span class="sig-paren">(</span><em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.find_node" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nid</strong> – the index of the node we want to find</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">node of the bracket at given node_ID</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.find_path">
+<code class="descname">find_path</code><span class="sig-paren">(</span><em>srcid</em>, <em>dstid</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.find_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>method that receives a source node and a destination one. It will check if two nodes are directly
+connected.
+:param srcid: the node’s id from which we will start to iterate
+:param dstid: the node’s id we want to know if it’s connected to source.
+:return: path: the list of nodes that will lead from source to dest.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_brackets">
+<code class="descname">get_brackets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_brackets" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will call the superclass method “treelib.tree.Tree.nodes()”
+:return: self.nodes(), a dictionnary of the form {id: node_instance}</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_branches">
+<code class="descname">get_branches</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_branches" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will iterate over ALL the brackets in the network, and will retrieve every branch on it.
+:return: branches, a list of all branches in this network</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_nb_brackets">
+<code class="descname">get_nb_brackets</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_nb_brackets" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the size of the brackets list.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_slack_node">
+<code class="descname">get_slack_node</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_slack_node" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The first item of the list of brackets which corresponds to the slack node.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_slack_voltage">
+<code class="descname">get_slack_voltage</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_slack_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>This will modelises the network’s Vnl matrix.
+:return: slack_voltage, a 19 by 3 matrix corresponding to the voltages on each slack node’s phases.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.get_voltage_no_load">
+<code class="descname">get_voltage_no_load</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.get_voltage_no_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is used to get the value of the Voltage on the slack node
+:return: self.__voltage_no_load</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="app.models.network.Network.next_sibling">
+<em class="property">static </em><code class="descname">next_sibling</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.next_sibling" title="Permalink to this definition">¶</a></dt>
+<dd><p>static method that receives a node. It will just check if the node’s parent has other children.
+:param node: the node we were traversing the tree from
+:return: index +1 if there are other children, instead returns None if IndexError or AttributeError</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.research_bracket">
+<code class="descname">research_bracket</code><span class="sig-paren">(</span><em>nid</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.research_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will search the Network after a bracket.
+:param nid: the bracket’s id we have to find
+:return: The nidth item in the network’s list of brackets</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.set_parent_of_bracket">
+<code class="descname">set_parent_of_bracket</code><span class="sig-paren">(</span><em>bracket</em>, <em>pid</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.set_parent_of_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bracket</strong> – the bracket we want to link to the one corresponding to pid</li>
+<li><strong>pid</strong> – the ID of the parent we want to link to the bracket</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.set_voltage_no_load">
+<code class="descname">set_voltage_no_load</code><span class="sig-paren">(</span><em>vnl</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.set_voltage_no_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method receives a new VNL that will replace the value of the ancient one.
+:param vnl: the double corresponding to the value we want to set voltage_no_load.
+:return: None</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.network.Network.update_bracket">
+<code class="descname">update_bracket</code><span class="sig-paren">(</span><em>bid</em>, <em>bracket</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.network.Network.update_bracket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces the bracket at the given id by the other one given in argument
+:param bid: index of the bracket to replace
+:param bracket: bracket updated
+:return: The updated bracket.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-networkbranch-module">
-<h2>app.models.networkbranch module<a class="headerlink" href="#app-models-networkbranch-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.networkbranch">
+<span id="app-models-networkbranch-module"></span><h2>app.models.networkbranch module<a class="headerlink" href="#module-app.models.networkbranch" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class NetworkBranch.</p>
+<dl class="class">
+<dt id="app.models.networkbranch.NetworkBranch">
+<em class="property">class </em><code class="descclassname">app.models.networkbranch.</code><code class="descname">NetworkBranch</code><span class="sig-paren">(</span><em>phases=None</em>, <em>r=None</em>, <em>x=None</em>, <em>length=None</em>, <em>Imax=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A Branch represents an edge of the Network and thus it stores all informations
+relative to it: the length of the cable, its length, its resistence, etc…</p>
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.calculate_impedance">
+<code class="descname">calculate_impedance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.calculate_impedance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Will calculate impedances on the differant phases.
+impedance must look like:
+[[11, 12, 13], [21, 22, 23], [31, 32, 33]]
+Z[i] = (R[i]+jX[i])*length
+:return: impedance, a 3 by 3 matrix</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.get_Imax">
+<code class="descname">get_Imax</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.get_Imax" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Imax: the maximum Intensity that the branch can support.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.get_R">
+<code class="descname">get_R</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.get_R" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">R: a list containing each resistance depending on the phase.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.get_X">
+<code class="descname">get_X</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.get_X" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">X: a list containing each reactance depending on the phase.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.get_length">
+<code class="descname">get_length</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.get_length" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">length: the length of the branch</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.get_phases">
+<code class="descname">get_phases</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.get_phases" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the phases that are on the branch.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.set_Imax">
+<code class="descname">set_Imax</code><span class="sig-paren">(</span><em>imax</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.set_Imax" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>imax</strong> – a double</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.set_R">
+<code class="descname">set_R</code><span class="sig-paren">(</span><em>r</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.set_R" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>r</strong> – a list of double</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.set_X">
+<code class="descname">set_X</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.set_X" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> – a list of double</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.set_length">
+<code class="descname">set_length</code><span class="sig-paren">(</span><em>l</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.set_length" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>l</strong> – a double</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkbranch.NetworkBranch.set_phases">
+<code class="descname">set_phases</code><span class="sig-paren">(</span><em>pob</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkbranch.NetworkBranch.set_phases" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pob</strong> – a list of boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-networknode-module">
-<h2>app.models.networknode module<a class="headerlink" href="#app-models-networknode-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.networknode">
+<span id="app-models-networknode-module"></span><h2>app.models.networknode module<a class="headerlink" href="#module-app.models.networknode" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class NetworkNode.</p>
 </div>
-<div class="section" id="app-models-networkuser-module">
-<h2>app.models.networkuser module<a class="headerlink" href="#app-models-networkuser-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.networkuser">
+<span id="app-models-networkuser-module"></span><h2>app.models.networkuser module<a class="headerlink" href="#module-app.models.networkuser" title="Permalink to this headline">¶</a></h2>
+<p>Contains class NetworkUser.</p>
+<dl class="class">
+<dt id="app.models.networkuser.NetworkUser">
+<em class="property">class </em><code class="descclassname">app.models.networkuser.</code><code class="descname">NetworkUser</code><span class="sig-paren">(</span><em>phases=None</em>, <em>P=None</em>, <em>Q=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Those are the people/entities that will connect to the network to take its power.</p>
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.get_P">
+<code class="descname">get_P</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.get_P" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the power corresponding to the user.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.get_Q">
+<code class="descname">get_Q</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.get_Q" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ol class="upperalpha simple" start="17">
+<li></li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.get_phases_required">
+<code class="descname">get_phases_required</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.get_phases_required" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">the list of phases the user is linked to</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.set_P">
+<code class="descname">set_P</code><span class="sig-paren">(</span><em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.set_P" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> – the new power that comes from the user</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.set_Q">
+<code class="descname">set_Q</code><span class="sig-paren">(</span><em>q</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.set_Q" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>q</strong> – the Q.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.networkuser.NetworkUser.set_phases_required">
+<code class="descname">set_phases_required</code><span class="sig-paren">(</span><em>phases</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.networkuser.NetworkUser.set_phases_required" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>phases</strong> – the new phases on which the user’s linked.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-simulationlf-module">
-<h2>app.models.simulationlf module<a class="headerlink" href="#app-models-simulationlf-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.simulationlf">
+<span id="app-models-simulationlf-module"></span><h2>app.models.simulationlf module<a class="headerlink" href="#module-app.models.simulationlf" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class SimulationLF. CLI application entrypoint.</p>
+<dl class="class">
+<dt id="app.models.simulationlf.SimulationLF">
+<em class="property">class </em><code class="descclassname">app.models.simulationlf.</code><code class="descname">SimulationLF</code><span class="sig-paren">(</span><em>nb=1</em>, <em>tol=0.01</em>, <em>delta=&lt;Timestamp.QUARTERS: 1&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Defines a run of the application and contains the load-flow algorithm.</p>
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.calculate_Q">
+<code class="descname">calculate_Q</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.calculate_Q" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will check the value of the simulation’s delta_time and will set the Q index value for Monte Carlo
+loop.
+:return: q, which can be 96 if we use Quarters, 24 for Hours and 1 for Days.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.get_delta_time">
+<code class="descname">get_delta_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.get_delta_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.get_nb_iterations">
+<code class="descname">get_nb_iterations</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.get_nb_iterations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.get_tolerance">
+<code class="descname">get_tolerance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.get_tolerance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.grid_definition">
+<code class="descname">grid_definition</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.grid_definition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translation of the grid_definition.mat from matlab tool.
+This function aims to translate the hierarchical data of a network and to transform it into
+matrices so we will be able to use it in the load-flow algorithm.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.load_flow">
+<code class="descname">load_flow</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.load_flow" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will implement the Load Flow algorithm.
+:param: network: the network on which we want to do the load flow.
+:return: dic: A dictionnary containing every matrix/array involved in the load flow resolution.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.powerflow">
+<code class="descname">powerflow</code><span class="sig-paren">(</span><em>voltage</em>, <em>intensity</em>, <em>conj=&lt;sphinx.ext.autodoc._MockObject object&gt;</em>, <em>real=&lt;sphinx.ext.autodoc._MockObject object&gt;</em>, <em>imag=&lt;sphinx.ext.autodoc._MockObject object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.powerflow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates a power flow.
+:param voltage:
+:param intensity:
+:param conj: used for caching
+:param real: used for caching
+:param imag: used for caching
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.printMenu">
+<code class="descname">printMenu</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.printMenu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the main menu of the CLI tool. Handles user input.
+:param network:
+:return:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.set_delta_time">
+<code class="descname">set_delta_time</code><span class="sig-paren">(</span><em>d</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.set_delta_time" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.set_nb_iterations">
+<code class="descname">set_nb_iterations</code><span class="sig-paren">(</span><em>nb</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.set_nb_iterations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.simulationlf.SimulationLF.set_tolerance">
+<code class="descname">set_tolerance</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.simulationlf.SimulationLF.set_tolerance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-singleton-module">
-<h2>app.models.singleton module<a class="headerlink" href="#app-models-singleton-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.singleton">
+<span id="app-models-singleton-module"></span><h2>app.models.singleton module<a class="headerlink" href="#module-app.models.singleton" title="Permalink to this headline">¶</a></h2>
+<p>Contains the Singleton Implementation for the models and the class NetworkManager.</p>
+<dl class="class">
+<dt id="app.models.singleton.NetworkManager">
+<em class="property">class </em><code class="descclassname">app.models.singleton.</code><code class="descname">NetworkManager</code><a class="headerlink" href="#app.models.singleton.NetworkManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Class designed to manage multiple network so it will further be able to behave like a
+super-network (maybe we should call this a cluster of network).
+Thus, it contains network management functions.</p>
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.add_network">
+<code class="descname">add_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.add_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.delete_network">
+<code class="descname">delete_network</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.delete_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.get_networks">
+<code class="descname">get_networks</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.get_networks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="app.models.singleton.NetworkManager.load_network_from_xlsx">
+<em class="property">static </em><code class="descname">load_network_from_xlsx</code><span class="sig-paren">(</span><em>path_to_file</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.load_network_from_xlsx" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.research_network_by_id">
+<code class="descname">research_network_by_id</code><span class="sig-paren">(</span><em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.research_network_by_id" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.research_network_by_object">
+<code class="descname">research_network_by_object</code><span class="sig-paren">(</span><em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.research_network_by_object" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.set_networks">
+<code class="descname">set_networks</code><span class="sig-paren">(</span><em>net</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.set_networks" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.models.singleton.NetworkManager.update_network">
+<code class="descname">update_network</code><span class="sig-paren">(</span><em>id</em>, <em>network_updated</em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.NetworkManager.update_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.models.singleton.Singleton">
+<em class="property">class </em><code class="descclassname">app.models.singleton.</code><code class="descname">Singleton</code><a class="headerlink" href="#app.models.singleton.Singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">type</span></code></p>
+<p>Simple implementation of the Singleton design pattern.</p>
+<dl class="method">
+<dt id="app.models.singleton.Singleton.get_instance">
+<code class="descname">get_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.models.singleton.Singleton.get_instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-models-timestamp-module">
-<h2>app.models.timestamp module<a class="headerlink" href="#app-models-timestamp-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models.timestamp">
+<span id="app-models-timestamp-module"></span><h2>app.models.timestamp module<a class="headerlink" href="#module-app.models.timestamp" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="app.models.timestamp.Timestamp">
+<em class="property">class </em><code class="descclassname">app.models.timestamp.</code><code class="descname">Timestamp</code><a class="headerlink" href="#app.models.timestamp.Timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Enum support for Monte Carlo ease of use.</p>
+<dl class="attribute">
+<dt id="app.models.timestamp.Timestamp.DAYS">
+<code class="descname">DAYS</code><em class="property"> = 3</em><a class="headerlink" href="#app.models.timestamp.Timestamp.DAYS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.timestamp.Timestamp.HOURS">
+<code class="descname">HOURS</code><em class="property"> = 2</em><a class="headerlink" href="#app.models.timestamp.Timestamp.HOURS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.models.timestamp.Timestamp.QUARTERS">
+<code class="descname">QUARTERS</code><em class="property"> = 1</em><a class="headerlink" href="#app.models.timestamp.Timestamp.QUARTERS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.models" title="Permalink to this headline">¶</a></h2>
+<p>Describes how an electrical network is designed and also how we implemented it.
+Modules:
+========</p>
+<blockquote>
+<div><ul class="simple">
+<li>bracket: Contains the class Bracket.</li>
+<li>network: Contains the class Network.</li>
+<li>networkbranch: Contains the class NetworkBranch.</li>
+<li>networknode: Contains the class NetworkNode.</li>
+<li>networkuser: Contains the class NetworkUser.</li>
+<li>simulationlf: Contains the class SimulationLF. Is also the CLI entrypoint.</li>
+<li>singleton: Contains the classes Singleton and NetworkManager (will be usable in a further version of the tool)</li>
+<li>timestamp: Contains the enum Timestamp.</li>
+</ul>
+</div></blockquote>
 </div>
 </div>
 
@@ -116,6 +784,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.serialization.html" title="app.serialization package"
              >next</a> |</li>
         <li class="right" >
@@ -127,7 +798,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Simon De Greve.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

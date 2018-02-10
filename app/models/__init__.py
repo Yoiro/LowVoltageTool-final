@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """
 Describes how an electrical network is designed and also how we implemented it.
 Modules:

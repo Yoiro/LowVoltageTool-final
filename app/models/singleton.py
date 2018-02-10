@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """Contains the Singleton Implementation for the models and the class NetworkManager."""
 
 

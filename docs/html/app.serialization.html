@@ -34,6 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.html" title="app.wxviews package"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -54,14 +57,49 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="app-serialization-serialization-module">
-<h2>app.serialization.serialization module<a class="headerlink" href="#app-serialization-serialization-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.serialization.serialization">
+<span id="app-serialization-serialization-module"></span><h2>app.serialization.serialization module<a class="headerlink" href="#module-app.serialization.serialization" title="Permalink to this headline">¶</a></h2>
+<p>Contains the class Serialization</p>
+<dl class="class">
+<dt id="app.serialization.serialization.Serialization">
+<em class="property">class </em><code class="descclassname">app.serialization.serialization.</code><code class="descname">Serialization</code><a class="headerlink" href="#app.serialization.serialization.Serialization" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Handles the I/O for the models.</p>
+<dl class="staticmethod">
+<dt id="app.serialization.serialization.Serialization.load_network_from_XLSX">
+<em class="property">static </em><code class="descname">load_network_from_XLSX</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#app.serialization.serialization.Serialization.load_network_from_XLSX" title="Permalink to this definition">¶</a></dt>
+<dd><p>This method will parse a file .xls_ to create a network.
+:param file: the path of the file containing the network. Must be of “.xlsx” extension.
+:return: network: the one loaded from the Excel file.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-serialization-uiserial-module">
-<h2>app.serialization.uiserial module<a class="headerlink" href="#app-serialization-uiserial-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.serialization.uiserial">
+<span id="app-serialization-uiserial-module"></span><h2>app.serialization.uiserial module<a class="headerlink" href="#module-app.serialization.uiserial" title="Permalink to this headline">¶</a></h2>
+<p>Contains SerializationUI class</p>
+<dl class="class">
+<dt id="app.serialization.uiserial.SerializationUI">
+<em class="property">class </em><code class="descclassname">app.serialization.uiserial.</code><code class="descname">SerializationUI</code><a class="headerlink" href="#app.serialization.uiserial.SerializationUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Handles the GUI I/O</p>
+<dl class="staticmethod">
+<dt id="app.serialization.uiserial.SerializationUI.load_network">
+<em class="property">static </em><code class="descname">load_network</code><span class="sig-paren">(</span><em>file</em><span class="sig-paren">)</span><a class="headerlink" href="#app.serialization.uiserial.SerializationUI.load_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="app.serialization.uiserial.SerializationUI.save_network">
+<em class="property">static </em><code class="descname">save_network</code><span class="sig-paren">(</span><em>path</em>, <em>network</em><span class="sig-paren">)</span><a class="headerlink" href="#app.serialization.uiserial.SerializationUI.save_network" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.serialization">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.serialization" title="Permalink to this headline">¶</a></h2>
+<p>Contains modules that handles application’s I/O</p>
 </div>
 </div>
 
@@ -98,6 +136,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.html" title="app.wxviews package"
              >next</a> |</li>
         <li class="right" >
@@ -109,7 +150,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Simon De Greve.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

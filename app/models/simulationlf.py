@@ -1,7 +1,11 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """Contains the class SimulationLF. CLI application entrypoint."""
 
 
-from time import process_time
+# from time import process_time
 
 import numpy as np
 from scipy.sparse import block_diag
@@ -194,7 +198,7 @@ class SimulationLF:
         Vbr = np.matrix(Vbr)
         # LOAD FLOW LOOP
         k = 0
-        t = process_time()
+        # t = process_time()
         while True:
             k += 1
             bal = 0
@@ -239,7 +243,7 @@ class SimulationLF:
         print(np.shape(Pbr), Qbr.shape)
         # END OF LOAD FLOW
         # End of load_flow.m
-        print("Process executed in", process_time() - t, "s")
+        # print("Process executed in", process_time() - t, "s")
         dic = {
             'Ibus_bat': Ibus[bat],
             'Ebat': Ebat,
@@ -463,10 +467,10 @@ if __name__ == '__main__':
                 continue"""
         dir = os.path.dirname(__file__)
         path = os.path.normpath(os.path.join(dir, '..', '..', 'ressources', 'Network_Flobecq.xlsx'))
-        t0 = process_time()
+        # t0 = process_time()
         network = Serialization.load_network_from_XLSX(path)
-        t1 = process_time()
-    print("Network read in", t1 - t0, "seconds")
+        # t1 = process_time()
+    # print("Network read in", t1 - t0, "seconds")
     manager.add_network(network)
 
     sim.printMenu(network)

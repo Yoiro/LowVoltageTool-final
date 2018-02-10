@@ -34,6 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="modules.html" title="LowVoltageTool-final"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -55,14 +58,80 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="app-wxviews-patterns-observer-module">
-<h2>app.wxviews.patterns.observer module<a class="headerlink" href="#app-wxviews-patterns-observer-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.patterns.observer">
+<span id="app-wxviews-patterns-observer-module"></span><h2>app.wxviews.patterns.observer module<a class="headerlink" href="#module-app.wxviews.patterns.observer" title="Permalink to this headline">¶</a></h2>
+<p>Contains classes Observer and Observable</p>
+<dl class="class">
+<dt id="app.wxviews.patterns.observer.Observable">
+<em class="property">class </em><code class="descclassname">app.wxviews.patterns.observer.</code><code class="descname">Observable</code><a class="headerlink" href="#app.wxviews.patterns.observer.Observable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implementation of the Observer Pattern (Observable).</p>
+<dl class="method">
+<dt id="app.wxviews.patterns.observer.Observable.register">
+<code class="descname">register</code><span class="sig-paren">(</span><em>observer</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.observer.Observable.register" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.patterns.observer.Observable.unregister">
+<code class="descname">unregister</code><span class="sig-paren">(</span><em>observer</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.observer.Observable.unregister" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.patterns.observer.Observable.unregister_all">
+<code class="descname">unregister_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.observer.Observable.unregister_all" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.patterns.observer.Observable.update_observers">
+<code class="descname">update_observers</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.observer.Observable.update_observers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="app.wxviews.patterns.observer.Observer">
+<em class="property">class </em><code class="descclassname">app.wxviews.patterns.observer.</code><code class="descname">Observer</code><a class="headerlink" href="#app.wxviews.patterns.observer.Observer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Implementation of the Observer Pattern.</p>
+<dl class="method">
+<dt id="app.wxviews.patterns.observer.Observer.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.observer.Observer.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-wxviews-patterns-singleton-module">
-<h2>app.wxviews.patterns.singleton module<a class="headerlink" href="#app-wxviews-patterns-singleton-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.patterns.singleton">
+<span id="app-wxviews-patterns-singleton-module"></span><h2>app.wxviews.patterns.singleton module<a class="headerlink" href="#module-app.wxviews.patterns.singleton" title="Permalink to this headline">¶</a></h2>
+<p>Contains a non-thread-safe Singleton for the GUI</p>
+<dl class="class">
+<dt id="app.wxviews.patterns.singleton.Singleton">
+<em class="property">class </em><code class="descclassname">app.wxviews.patterns.singleton.</code><code class="descname">Singleton</code><span class="sig-paren">(</span><em>decorated</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.singleton.Singleton" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>A non-thread-safe helper class to ease implementing singletons.
+This should be used as a decorator – not a metaclass – to the
+class that should be a singleton.</p>
+<p>The decorated class can define one <cite>__init__</cite> function that
+takes only the <cite>self</cite> argument. Also, the decorated class cannot be
+inherited from. Other than that, there are no restrictions that apply
+to the decorated class.</p>
+<p>To get the singleton instance, use the <cite>Instance</cite> method. Trying
+to use <cite>__call__</cite> will result in a <cite>TypeError</cite> being raised.</p>
+<p>Source: Paul Manta &#64; <a class="reference external" href="https://stackoverflow.com/a/7346105/7489100">https://stackoverflow.com/a/7346105/7489100</a></p>
+<dl class="method">
+<dt id="app.wxviews.patterns.singleton.Singleton.Instance">
+<code class="descname">Instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.patterns.singleton.Singleton.Instance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the singleton instance. Upon its first call, it creates a
+new instance of the decorated class and calls its <cite>__init__</cite> method.
+On all subsequent calls, the already created instance is returned.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.patterns">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.wxviews.patterns" title="Permalink to this headline">¶</a></h2>
+<p>Contains design patterns implementation for the GUI.</p>
 </div>
 </div>
 
@@ -99,6 +168,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="modules.html" title="LowVoltageTool-final"
              >next</a> |</li>
         <li class="right" >
@@ -111,7 +183,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Simon De Greve.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

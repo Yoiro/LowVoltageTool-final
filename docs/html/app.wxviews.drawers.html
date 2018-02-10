@@ -34,6 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.items.html" title="app.wxviews.items package"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -55,14 +58,57 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="app-wxviews-drawers-drawer-module">
-<h2>app.wxviews.drawers.drawer module<a class="headerlink" href="#app-wxviews-drawers-drawer-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.drawers.drawer">
+<span id="app-wxviews-drawers-drawer-module"></span><h2>app.wxviews.drawers.drawer module<a class="headerlink" href="#module-app.wxviews.drawers.drawer" title="Permalink to this headline">¶</a></h2>
+<p>Contains Drawer class</p>
+<dl class="class">
+<dt id="app.wxviews.drawers.drawer.Drawer">
+<em class="property">class </em><code class="descclassname">app.wxviews.drawers.drawer.</code><code class="descname">Drawer</code><a class="headerlink" href="#app.wxviews.drawers.drawer.Drawer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>This class will contain top level informations about how we want items to be drown</p>
+<dl class="attribute">
+<dt id="app.wxviews.drawers.drawer.Drawer.color">
+<code class="descname">color</code><a class="headerlink" href="#app.wxviews.drawers.drawer.Drawer.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used by autodoc_mock_imports.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="app.wxviews.drawers.drawer.Drawer.size_hint">
+<code class="descname">size_hint</code><em class="property"> = 1</em><a class="headerlink" href="#app.wxviews.drawers.drawer.Drawer.size_hint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-wxviews-drawers-nodedrawer-module">
-<h2>app.wxviews.drawers.nodedrawer module<a class="headerlink" href="#app-wxviews-drawers-nodedrawer-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.drawers.nodedrawer">
+<span id="app-wxviews-drawers-nodedrawer-module"></span><h2>app.wxviews.drawers.nodedrawer module<a class="headerlink" href="#module-app.wxviews.drawers.nodedrawer" title="Permalink to this headline">¶</a></h2>
+<p>Contains NodeDrawer class</p>
+<dl class="class">
+<dt id="app.wxviews.drawers.nodedrawer.NodeDrawer">
+<em class="property">class </em><code class="descclassname">app.wxviews.drawers.nodedrawer.</code><code class="descname">NodeDrawer</code><a class="headerlink" href="#app.wxviews.drawers.nodedrawer.NodeDrawer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.wxviews.drawers.drawer.Drawer" title="app.wxviews.drawers.drawer.Drawer"><code class="xref py py-class docutils literal"><span class="pre">app.wxviews.drawers.drawer.Drawer</span></code></a></p>
+<p>Class that will be used to draw nodes.</p>
+<dl class="method">
+<dt id="app.wxviews.drawers.nodedrawer.NodeDrawer.OnNodeUpdate">
+<code class="descname">OnNodeUpdate</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.drawers.nodedrawer.NodeDrawer.OnNodeUpdate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="app.wxviews.drawers.nodedrawer.NodeDrawer.drawNode">
+<em class="property">static </em><code class="descname">drawNode</code><span class="sig-paren">(</span><em>pos=(0</em>, <em>0)</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.drawers.nodedrawer.NodeDrawer.drawNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="app.wxviews.drawers.nodedrawer.NodeDrawer.size">
+<code class="descname">size</code><em class="property"> = 10</em><a class="headerlink" href="#app.wxviews.drawers.nodedrawer.NodeDrawer.size" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.drawers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.wxviews.drawers" title="Permalink to this headline">¶</a></h2>
+<p>Drawers tells how to draw the graphical representation of the models.</p>
 </div>
 </div>
 
@@ -99,6 +145,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.items.html" title="app.wxviews.items package"
              >next</a> |</li>
         <li class="right" >
@@ -111,7 +160,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Simon De Greve.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

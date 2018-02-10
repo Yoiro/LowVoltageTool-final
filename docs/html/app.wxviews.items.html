@@ -34,6 +34,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.panels.html" title="app.wxviews.panels package"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -55,14 +58,67 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="app-wxviews-items-networkrepr-module">
-<h2>app.wxviews.items.networkrepr module<a class="headerlink" href="#app-wxviews-items-networkrepr-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.items.networkrepr">
+<span id="app-wxviews-items-networkrepr-module"></span><h2>app.wxviews.items.networkrepr module<a class="headerlink" href="#module-app.wxviews.items.networkrepr" title="Permalink to this headline">¶</a></h2>
+<p>Contains NetworkRepr class</p>
+<dl class="class">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr">
+<em class="property">class </em><code class="descclassname">app.wxviews.items.networkrepr.</code><code class="descname">NetworkRepr</code><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="app.wxviews.patterns.html#app.wxviews.patterns.observer.Observable" title="app.wxviews.patterns.observer.Observable"><code class="xref py py-class docutils literal"><span class="pre">app.wxviews.patterns.observer.Observable</span></code></a></p>
+<p>This class works as a wrapper/manager for all our GUI elements. 
+Thus it will contain every single element added to the application</p>
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.addBranch">
+<code class="descname">addBranch</code><span class="sig-paren">(</span><em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.addBranch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.addNode">
+<code class="descname">addNode</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.addNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.deleteBranch">
+<code class="descname">deleteBranch</code><span class="sig-paren">(</span><em>branch</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.deleteBranch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.deleteNode">
+<code class="descname">deleteNode</code><span class="sig-paren">(</span><em>node</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.deleteNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.updateBranch">
+<code class="descname">updateBranch</code><span class="sig-paren">(</span><em>branch</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.updateBranch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="app.wxviews.items.networkrepr.NetworkRepr.updateNode">
+<code class="descname">updateNode</code><span class="sig-paren">(</span><em>node</em>, <em>index</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.networkrepr.NetworkRepr.updateNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="app-wxviews-items-noderepr-module">
-<h2>app.wxviews.items.noderepr module<a class="headerlink" href="#app-wxviews-items-noderepr-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.items.noderepr">
+<span id="app-wxviews-items-noderepr-module"></span><h2>app.wxviews.items.noderepr module<a class="headerlink" href="#module-app.wxviews.items.noderepr" title="Permalink to this headline">¶</a></h2>
+<p>Contains NodeRepr class</p>
+<dl class="class">
+<dt id="app.wxviews.items.noderepr.NodeRepr">
+<em class="property">class </em><code class="descclassname">app.wxviews.items.noderepr.</code><code class="descname">NodeRepr</code><span class="sig-paren">(</span><em>pos=(0</em>, <em>0)</em>, <em>diameter=0</em>, <em>node: &lt;sphinx.ext.autodoc._MockObject object at 0x7f68733173c8&gt; = &lt;sphinx.ext.autodoc._MockObject object&gt;</em>, <em>circle=None</em><span class="sig-paren">)</span><a class="headerlink" href="#app.wxviews.items.noderepr.NodeRepr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Contains GUI info and model info for the Node</p>
+<dl class="attribute">
+<dt id="app.wxviews.items.noderepr.NodeRepr.counter">
+<code class="descname">counter</code><em class="property"> = 0</em><a class="headerlink" href="#app.wxviews.items.noderepr.NodeRepr.counter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-app.wxviews.items">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.wxviews.items" title="Permalink to this headline">¶</a></h2>
+<p>Modules here handles the linking of a Graphical item and the models. Naming convention is [modelclass]Repr</p>
 </div>
 </div>
 
@@ -99,6 +155,9 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="app.wxviews.panels.html" title="app.wxviews.panels package"
              >next</a> |</li>
         <li class="right" >
@@ -111,7 +170,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Simon De Greve.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
     </div>
   </body>
 </html>

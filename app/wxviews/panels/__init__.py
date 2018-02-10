@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """Gives informations about the layouts and the main look & feel of the app."""
 
 

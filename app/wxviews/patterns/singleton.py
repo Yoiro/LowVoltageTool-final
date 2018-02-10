@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# coding=utf-8
+
+
 """Contains a non-thread-safe Singleton for the GUI"""
 
 
